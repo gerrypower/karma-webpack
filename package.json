@@ -34,7 +34,9 @@
     "start": "nodemon $2 --exec babel-node",
     "test": "mocha -c -S -R spec 'tests/unit' --compilers js:babel-register --check-leaks",
     "test:export": "mocha -S -R mochawesome 'tests/unit' --compilers js:babel-register --reporter-options reportDir=reports --check-leaks",
-    "test:watch": "mocha -w -c -S -R spec 'tests/unit' --compilers js:babel-register --check-leaks"
+    "test:watch": "mocha -w -c -S -R spec 'tests/unit' --compilers js:babel-register --check-leaks",
+    "travis:test": "npm run test",
+    "travis:lint": "npm run lint && npm run scan:security"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",
